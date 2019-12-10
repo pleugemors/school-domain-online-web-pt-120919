@@ -11,7 +11,7 @@ class School
     if @roster.empty?
       @roster[grade] = []
       @roster[grade] << name 
-    elsif @roster[grade].size == nil
+    elsif !@roster.key?(grade)
       roster[grade] = []
       roster[grade] << name
     else 
