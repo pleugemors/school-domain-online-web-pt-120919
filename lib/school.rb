@@ -8,10 +8,13 @@ class School
   attr_reader :roster 
   
   def add_student(name, grade)
-    if roster[grade].empty?
+    if @roster.empty?
       @roster[grade] = []
       @roster[grade] << name 
-    else
+    elsif roster[grade].empty?
+      roster[grade] = []
+      roster[grade] << name
+    else 
       @roster[grade] << name 
     end
   end
